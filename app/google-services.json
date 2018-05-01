@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1088963634766",
+    "firebase_url": "https://shakepaws-f419b.firebaseio.com",
+    "project_id": "shakepaws-f419b",
+    "storage_bucket": "shakepaws-f419b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088963634766:android:0033faae49fe9fdb",
+        "android_client_info": {
+          "package_name": "com.misht.shakepaws"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088963634766-svijio482q7vnhuakms8r3ggpgmhq2ub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.misht.shakepaws",
+            "certificate_hash": "e4ac14faf4910a38884b3d80f1ff469d8b7972d4"
+          }
+        },
+        {
+          "client_id": "1088963634766-3sjgag604pommtup1dvr348lpcgs0avn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqSfypx9GR-CPqRtS1nneIGl40IzGGc0k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088963634766-3sjgag604pommtup1dvr348lpcgs0avn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
