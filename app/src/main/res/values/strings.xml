@@ -1,4 +1,34 @@
 <resources>
     <string name="app_name">ShakePaws</string>
-    <string name="todo">TODO</string>
+    <string name="or">or</string>
+    <string name="log_in_with_gmail">Log in with Gmail</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="are_you_new">Are you new?</string>
+    <string name="sign_up_here">Sign up here</string>
+    <string name="full_name">Full name</string>ç
+    <string name="sign_up">Sign up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="userprofile">UserProfile</string>
+    <string name="name">Name</string>
+    <string name="full_name_">Full name</string>
+    <string name="telphone_number">Telphone number</string>
+    <string name="address">Address</string>
+    <string name="mishell_tigse">Mishell Tigse</string>
+    <string name="mishtigs_ucm_es">mishtigs@ucm.es</string>
+    <string name="_34_620785383">+34 620785383</string>
+    <string name="yliopistokatu_18">Yliopistokatu 18</string>
+    <string name="save">Save</string>
+    <string name="email">Email</string>
+
+    <string name="shakepaws">shakepaws</string>
+    <string name="logged_in">logged_in</string>
+    <string name="years"> years</string>
+
+    <string name="navigation_drawer_start">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="todo">todo</string>
+
 </resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Main">
+        <menu>
+            <group android:checkableBehavior="single" android:id="@+id/grp1">
+                <item
+                    android:id="@+id/home"
+                    android:icon="@drawable/ic_home"
+                    android:title="Home"
+                    app:actionViewClass="android.widget.TextView"/>
+                <item
+                    android:id="@+id/upload"
+                    android:icon="@drawable/ic_upload"
+                    android:title="UPload pet"
+                    app:actionViewClass="android.widget.TextView"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Other">
+        <menu>
+            <group android:checkableBehavior="single" android:id="@+id/grp2">
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_lock"
+                    android:title="Logout"
+                    app:actionViewClass="android.widget.TextView"/>
+            </group>
+        </menu>
+    </item>
+</menu>

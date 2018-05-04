@@ -1,10 +1,11 @@
 package com.misht.shakepaws;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,8 +23,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.misht.shakepaws.home.MainActivity;
 
-public class MainActivity extends AppCompatActivity  {
+public class LoginActivity extends AppCompatActivity  {
 
     private SignInButton signInButton;
     private GoogleApiClient googleApiClient;
@@ -34,8 +36,8 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        setContentView(R.layout.activity_login);
+        signInButton = findViewById(R.id.sign_in_button);
         firebaseAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -84,9 +86,15 @@ public class MainActivity extends AppCompatActivity  {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> AuthResultTask) {
                         if (AuthResultTask.isSuccessful()) {
-                            FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                            //FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+                            final SharedPreferences preferences = getSharedPreferences(getString(R.string.shakepaws), Context.MODE_PRIVATE);
+                            preferences.edit().putBoolean(getString(R.string.logged_in), true).apply();
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                            finish();
                         } else {
-                            Toast.makeText(MainActivity.this, "Something Went Wrong", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Something Went Wrong", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
