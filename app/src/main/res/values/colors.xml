@@ -7,4 +7,37 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGray">#888</color>
+
+    <!-- Screens background color -->
+    <color name="bg_screen_1">#f64c73</color>
+    <color name="bg_screen_2">#20d2bb</color>
+    <color name="bg_screen_3">#3395ff</color>
+    <color name="bg_screen_4">#c873f4</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen_1">#d1395c</color>
+    <color name="dot_dark_screen_2">#14a895</color>
+    <color name="dot_dark_screen_3">#2278d4</color>
+    <color name="dot_dark_screen_4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen_1">#f98da5</color>
+    <color name="dot_light_screen_2">#8cf9eb</color>
+    <color name="dot_light_screen_3">#93c6fd</color>
+    <color name="dot_light_screen_4">#e4b5fc</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen_1</item>
+        <item>@color/dot_light_screen_2</item>
+        <item>@color/dot_light_screen_3</item>
+        <item>@color/dot_light_screen_4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen_1</item>
+        <item>@color/dot_dark_screen_2</item>
+        <item>@color/dot_dark_screen_3</item>
+        <item>@color/dot_dark_screen_4</item>
+    </array>
+
 </resources>

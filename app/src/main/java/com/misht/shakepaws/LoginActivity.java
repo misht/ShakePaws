@@ -25,10 +25,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.misht.shakepaws.home.MainActivity;
+import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
 public class LoginActivity extends AppCompatActivity  {
 
-    private SignInButton signInButton;
+//    private SignInButton signInButton;
+    private GoogleSignInButton signInButton;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
     private static final int RC_SIGN_IN = 7;

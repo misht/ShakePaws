@@ -1,6 +1,7 @@
 package com.misht.shakepaws.home.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -61,6 +62,9 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
                     Pet pet = snapshot.getValue(Pet.class);
                     petList.add(pet);
                 }
+
+                adapter = new FPetAdapter(getContext(), petList);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -75,8 +79,8 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
     public void onResume() {
         super.onResume();
 //        petList = showSamplePets();
-        adapter = new FPetAdapter(getContext(), petList, this);
-        adapter.notifyDataSetChanged();
+//        adapter = new FPetAdapter(getContext(), petList, this);
+//        adapter.notifyDataSetChanged();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);

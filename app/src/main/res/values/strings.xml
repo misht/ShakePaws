@@ -32,4 +32,21 @@
     <string name="todo">todo</string>
     <string name="send_email">Send Email</string>
 
+    <string name="title_activity_welcome">Hoem Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">LOG IN</string>
+
+    <string name="slide_1_title">Hello Pet Lovers!</string>
+    <string name="slide_1_desc">The easiest way to find a pet in need of a new home!</string>
+
+    <string name="slide_2_title">Don\'t Abandon Me</string>
+    <string name="slide_2_desc">Entrust your pet to the hands of a loving family instead of abandoning it!</string>
+
+    <string name="slide_3_title">It\'s Free</string>
+    <string name="slide_3_desc">Find great pets for free. No service fee charged!</string>
+
+    <string name="slide_4_title">Share with Friends</string>
+    <string name="slide_4_desc">Help us reach more people would you? Let your friends know!</string>
+
 </resources>
