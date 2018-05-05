@@ -11,11 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.misht.shakepaws.R;
 import com.misht.shakepaws.home.DetailActivity;
+import com.misht.shakepaws.home.adapter.FPetAdapter;
 import com.misht.shakepaws.home.adapter.PetAdapter;
 import com.misht.shakepaws.home.models.Pet;
 import com.misht.shakepaws.utils.ClickListener;
+import com.misht.shakepaws.utils.Constants;
 import com.misht.shakepaws.utils.RecyclerTouchListener;
 
 import java.util.ArrayList;
@@ -24,11 +31,13 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment implements PetAdapter.PetAdapterListener{
+public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterListener {
 
     private RecyclerView recyclerView;
-    private PetAdapter adapter;
+    private FPetAdapter adapter;
     private List<Pet> petList;
+
+    private DatabaseReference mDatabase;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -41,14 +50,30 @@ public class HomeFragment extends Fragment implements PetAdapter.PetAdapterListe
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.pet_list_recyclerview);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference(Constants.DATABASE_PATH_SAVE);
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                    Pet pet = snapshot.getValue(Pet.class);
+                    petList.add(pet);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        petList = showSamplePets();
-        adapter = new PetAdapter(getContext(), petList, this);
+//        petList = showSamplePets();
+        adapter = new FPetAdapter(getContext(), petList, this);
         adapter.notifyDataSetChanged();
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);

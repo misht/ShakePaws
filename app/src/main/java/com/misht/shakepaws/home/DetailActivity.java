@@ -30,9 +30,9 @@ import static android.view.View.GONE;
 public class DetailActivity extends AppCompatActivity {
 
     private ImageView petImage;
-    private TextView petName, phoneNumber, petStatus, petBreed, petAge, location, petGender, petDesc;
+    private TextView petName, phoneNumber, petStatus, petBreed, petAge, location, petGender, petDesc, email;
     private RelativeLayout phoneNumberLayout, petStatusLayout, petBreedLayout,
-            petAgeLayout, petLocationLayout, petGenderLayout, petDescLayout;
+            petAgeLayout, petLocationLayout, petGenderLayout, petDescLayout, petEmailLayout;
 
     private Pet pet;
 
@@ -68,6 +68,7 @@ public class DetailActivity extends AppCompatActivity {
         phoneNumber = findViewById(R.id.con_phone);
         location = findViewById(R.id.con_location);
         petDesc = findViewById(R.id.con_desc);
+        email = findViewById(R.id.con_email);
 
 
         phoneNumberLayout = findViewById(R.id.con_phone_layout);
@@ -77,6 +78,7 @@ public class DetailActivity extends AppCompatActivity {
         petGenderLayout = findViewById(R.id.con_gender_layout);
         petLocationLayout = findViewById(R.id.con_location_layout);
         petDescLayout = findViewById(R.id.con_desc_layout);
+        petEmailLayout = findViewById(R.id.con_email_layout);
     }
 
     @Override
@@ -87,38 +89,63 @@ public class DetailActivity extends AppCompatActivity {
 
         assert pet != null;
 
-        Glide.with(this).load(pet.getPhoto())
+        Glide.with(this).load(pet.getImageUrl())
                 .apply(RequestOptions.centerCropTransform()).into(petImage);
 
-//        if(pet.getName() != null && !pet.getName().equals(""))
-//            petName.setText(pet.getName());
-//        else
-//            petName.setVisibility(GONE);
+        if(pet.getName() != null && !pet.getName().equals(""))
+            petName.setText(pet.getName());
+        else
+            petName.setVisibility(GONE);
         if(pet.getAge() != null && !pet.getAge().equals("")) {
             String tempAge = pet.getAge() + " " + getString(R.string.years);
             petAge.setText(tempAge);
-        } else
+        } else {
             petAgeLayout.setVisibility(GONE);
+        }
+
+        if(pet.getGender() != null && !pet.getGender().equals(""))
+            petGender.setText(pet.getGender());
+        else
+            petGenderLayout.setVisibility(GONE);
+
+        if(pet.getAvailability() != null && !pet.getAvailability().equals(""))
+            petStatus.setText(pet.getAvailability());
+        else
+            petStatusLayout.setVisibility(GONE);
+
+        if(pet.getBreed() != null && !pet.getBreed().equals(""))
+            petBreed.setText(pet.getBreed());
+        else
+            petBreedLayout.setVisibility(GONE);
 
         if(pet.getPetOwnerPhoneNumber() != null && !pet.getPetOwnerPhoneNumber().equals(""))
             phoneNumber.setText(pet.getPetOwnerPhoneNumber());
         else
             phoneNumberLayout.setVisibility(GONE);
-//
-//        if(pet.getLocation() != null && !pet.getLocation().equals(""))
-//            location.setText(pet.getLocation());
-//        else
-//            petLocationLayout.setVisibility(GONE);
-//
-//        petEmailLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(Intent.ACTION_SEND);
-//                i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{ email });
-//                startActivity(Intent.createChooser(i, getString(R.string.send_email)));
-//            }
-//        });
-//
+
+        if(pet.getLocation() != null && !pet.getLocation().equals(""))
+            location.setText(pet.getLocation());
+        else
+            petLocationLayout.setVisibility(GONE);
+
+        if(pet.getDescription() != null && !pet.getDescription().equals(""))
+            petDesc.setText(pet.getDescription());
+        else
+            petDescLayout.setVisibility(GONE);
+
+        if(pet.getPetOwnerEmail() != null && !pet.getPetOwnerEmail().equals(""))
+            email.setText(pet.getPetOwnerEmail());
+        else
+            petEmailLayout.setVisibility(GONE);
+        petEmailLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{ pet.getPetOwnerEmail() });
+                startActivity(Intent.createChooser(i, getString(R.string.send_email)));
+            }
+        });
+
 
         final Activity activity = this;
 

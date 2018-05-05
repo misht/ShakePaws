@@ -166,6 +166,35 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/con_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/icon_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_email"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:id="@+id/con_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/icon_email"
+                android:text="misht@student.oulu.fi"
+                android:ellipsize="end"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/con_location_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

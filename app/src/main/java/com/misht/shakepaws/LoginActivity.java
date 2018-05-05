@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity  {
                 .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
+                        Log.d(TAG, "GoogleApiClient connection failed");
                     }
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
