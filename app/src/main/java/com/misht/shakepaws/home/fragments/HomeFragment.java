@@ -51,6 +51,8 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.pet_list_recyclerview);
 
+        petList = new ArrayList<>();
+
         mDatabase = FirebaseDatabase.getInstance().getReference(Constants.DATABASE_PATH_SAVE);
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
