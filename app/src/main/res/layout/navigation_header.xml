@@ -17,7 +17,6 @@
             android:id="@+id/user_profile_img"
             android:layout_width="85dp"
             android:layout_height="85dp"
-            android:src="@drawable/shakepaws"
             android:layout_marginBottom="5dp"
             android:contentDescription="@null" />
 
@@ -25,7 +24,6 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MishT"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/colorWhite"/>
@@ -34,7 +32,6 @@
             android:id="@+id/user_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="misht@gmail.com"
             android:textSize="14sp"
             android:textColor="@color/colorWhite"/>
     </LinearLayout>
