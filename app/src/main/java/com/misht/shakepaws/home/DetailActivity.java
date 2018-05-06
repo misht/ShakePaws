@@ -92,10 +92,10 @@ public class DetailActivity extends AppCompatActivity {
         Glide.with(this).load(pet.getImageUrl())
                 .apply(RequestOptions.centerCropTransform()).into(petImage);
 
-        if(pet.getName() != null && !pet.getName().equals(""))
-            petName.setText(pet.getName());
-        else
-            petName.setVisibility(GONE);
+//        if(pet.getName() != null && !pet.getName().equals(""))
+//            petName.setText(pet.getName());
+//        else
+//            petName.setVisibility(GONE);
         if(pet.getAge() != null && !pet.getAge().equals("")) {
             String tempAge = pet.getAge() + " " + getString(R.string.years);
             petAge.setText(tempAge);
