@@ -9,10 +9,8 @@ import java.io.Serializable;
  */
 
 public class Pet implements Serializable {
-    private int id;
     private String name;
     private String age;
-    private int photo;
     private String petOwnerPhoneNumber;
     private String petOwnerName;
     private String petOwnerEmail;
@@ -22,14 +20,6 @@ public class Pet implements Serializable {
     private String description;
     private String breed;
     private String imageUrl;
-
-    public Pet(int id, String name, String age, String phone, int photo) {
-        this.setId(id);
-        this.setName(name);
-        this.setAge(age);
-        this.setPetOwnerPhoneNumber(phone);
-        this.setPhoto(photo);
-    }
 
     // Default constructor required for calls to
     // DataSnapshot.getValue(Pet.class)
@@ -65,22 +55,6 @@ public class Pet implements Serializable {
 
     public void setAge(String age) {
         this.age = age;
-    }
-
-    public int getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(int photo) {
-        this.photo = photo;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getPetOwnerPhoneNumber() {

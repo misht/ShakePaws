@@ -102,7 +102,6 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
         }));
     }
 
-    @Override
     public void onPetSelected(Pet pet) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("pet_object", pet);
@@ -111,51 +110,51 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
         startActivity(intent);
     }
 
-    private List<Pet> showSamplePets() {
-        List<Pet> petList = new ArrayList<>();
-
-        int[] pics = new int[]{
-                R.mipmap.a,
-                R.mipmap.b,
-                R.mipmap.c,
-                R.mipmap.d,
-                R.mipmap.e,
-                R.mipmap.f
-        };
-
-        Pet a = new Pet(1,"Agility", "1", "+358413298321", pics[0]);
-        petList.add(a);
-
-        Pet b = new Pet(2,"True Romance", "0.3", "+358413298321", pics[1]);
-        petList.add(b);
-
-        Pet c = new Pet(3,"Pretty", "1.2", "+358413298321", pics[2]);
-        petList.add(c);
-
-        Pet d = new Pet(4,"Maroon", "0.4", "+358413298321", pics[3]);
-        petList.add(d);
-
-        Pet e = new Pet(5,"Honey", "0.9", "+358413298321", pics[4]);
-        petList.add(e);
-
-        Pet f = new Pet(6,"Cutie Cutie", "0.4", "413298321", pics[5]);
-        petList.add(f);
-
-        Pet g = new Pet(7,"Baby Juicy", "0.3", "+358413298321", pics[1]);
-        petList.add(b=g);
-
-        Pet h = new Pet(8,"Tomkin", "1.2", "+358413298321", pics[2]);
-        petList.add(h);
-
-        Pet i = new Pet(9,"Truce", "0.4", "+358413298321", pics[3]);
-        petList.add(i);
-
-        Pet j = new Pet(10,"Deedee", "0.9", "+358413298321", pics[4]);
-        petList.add(j);
-
-        Pet k = new Pet(11,"Baby", "0.4", "+358413298321", pics[5]);
-        petList.add(k);
-
-        return petList;
-    }
+//    private List<Pet> showSamplePets() {
+//        List<Pet> petList = new ArrayList<>();
+//
+//        int[] pics = new int[]{
+//                R.mipmap.a,
+//                R.mipmap.b,
+//                R.mipmap.c,
+//                R.mipmap.d,
+//                R.mipmap.e,
+//                R.mipmap.f
+//        };
+//
+//        Pet a = new Pet(1,"Agility", "1", "+358413298321", pics[0]);
+//        petList.add(a);
+//
+//        Pet b = new Pet(2,"True Romance", "0.3", "+358413298321", pics[1]);
+//        petList.add(b);
+//
+//        Pet c = new Pet(3,"Pretty", "1.2", "+358413298321", pics[2]);
+//        petList.add(c);
+//
+//        Pet d = new Pet(4,"Maroon", "0.4", "+358413298321", pics[3]);
+//        petList.add(d);
+//
+//        Pet e = new Pet(5,"Honey", "0.9", "+358413298321", pics[4]);
+//        petList.add(e);
+//
+//        Pet f = new Pet(6,"Cutie Cutie", "0.4", "413298321", pics[5]);
+//        petList.add(f);
+//
+//        Pet g = new Pet(7,"Baby Juicy", "0.3", "+358413298321", pics[1]);
+//        petList.add(b=g);
+//
+//        Pet h = new Pet(8,"Tomkin", "1.2", "+358413298321", pics[2]);
+//        petList.add(h);
+//
+//        Pet i = new Pet(9,"Truce", "0.4", "+358413298321", pics[3]);
+//        petList.add(i);
+//
+//        Pet j = new Pet(10,"Deedee", "0.9", "+358413298321", pics[4]);
+//        petList.add(j);
+//
+//        Pet k = new Pet(11,"Baby", "0.4", "+358413298321", pics[5]);
+//        petList.add(k);
+//
+//        return petList;
+//    }
 }
