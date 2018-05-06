@@ -62,6 +62,7 @@ public class UploadPetActivity extends AppCompatActivity {
         }
 
         storageReference = FirebaseStorage.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference(Constants.DATABASE_PATH_SAVE);
     }
 
     @Override

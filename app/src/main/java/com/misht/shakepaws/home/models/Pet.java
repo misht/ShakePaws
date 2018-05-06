@@ -31,6 +31,8 @@ public class Pet implements Serializable {
         this.setPhoto(photo);
     }
 
+    // Default constructor required for calls to
+    // DataSnapshot.getValue(Pet.class)
     public Pet() {}
 
     public Pet(String name, String age, String phone, String petOwnerName,
