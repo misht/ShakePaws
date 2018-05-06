@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
     private List<Pet> petList;
 
     private DatabaseReference mDatabase;
+    private FPetAdapter listener;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -52,6 +53,7 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
 
         petList = new ArrayList<>();
 
+
         mDatabase = FirebaseDatabase.getInstance().getReference(Constants.DATABASE_PATH_SAVE);
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,7 +63,7 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
                     petList.add(pet);
                 }
 
-                adapter = new FPetAdapter(getContext(), petList);
+                adapter = new FPetAdapter(getContext(), petList, HomeFragment.this);
                 adapter.notifyDataSetChanged();
             }
 
@@ -100,6 +102,7 @@ public class HomeFragment extends Fragment implements FPetAdapter.FPetAdapterLis
         }));
     }
 
+    @Override
     public void onPetSelected(Pet pet) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("pet_object", pet);

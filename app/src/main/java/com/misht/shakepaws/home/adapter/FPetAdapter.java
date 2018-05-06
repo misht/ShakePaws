@@ -24,10 +24,10 @@ public class FPetAdapter extends RecyclerView.Adapter<FPetAdapter.PetViewHolder>
     private Pet pet;
     private FPetAdapter.FPetAdapterListener listener;
 
-    public FPetAdapter(Context context, List<Pet> petList) {
+    public FPetAdapter(Context context, List<Pet> petList, FPetAdapterListener listener) {
         this.context = context;
         this.petList = petList;
-//        this.listener = listener;
+        this.listener = listener;
     }
 
     @Override
