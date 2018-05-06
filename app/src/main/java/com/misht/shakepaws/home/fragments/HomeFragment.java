@@ -1,7 +1,6 @@
 package com.misht.shakepaws.home.fragments;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,7 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.misht.shakepaws.R;
 import com.misht.shakepaws.home.DetailActivity;
 import com.misht.shakepaws.home.adapter.FPetAdapter;
-import com.misht.shakepaws.home.adapter.PetAdapter;
 import com.misht.shakepaws.home.models.Pet;
 import com.misht.shakepaws.utils.ClickListener;
 import com.misht.shakepaws.utils.Constants;
